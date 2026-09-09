@@ -1,9 +1,6 @@
 package se.lexicon.E_commerce_platform.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
@@ -15,6 +12,7 @@ import java.time.Instant;
 @ToString
 @EqualsAndHashCode
 
+@Table(name = "customers")
 public class Customer {
 
     @Id
@@ -32,7 +30,21 @@ public class Customer {
 
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
+
+
+    @PrePersist
+    public void prePersist() {
+        this.createdAt = Instant.now();
+    }
+
+    /* unidirectional one-to-one relationship with Address */
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, optional = false)
+    @JoinColumn(name = "address_id", nullable = false)
     private Address address;
+
+    /* bidirectional one-to-one relationship with UserProfile */
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "profile_id")
     private UserProfile profile;
 
 }

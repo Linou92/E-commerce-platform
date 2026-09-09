@@ -1,9 +1,6 @@
 package se.lexicon.E_commerce_platform.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -13,6 +10,7 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 
+@Table(name = "user_profiles")
 public class UserProfile {
 
     @Id
@@ -27,4 +25,7 @@ public class UserProfile {
 
     @Column(length = 500)
     private String bio;
+
+    @OneToOne(mappedBy = "profile")
+    private Customer customer;
 }
