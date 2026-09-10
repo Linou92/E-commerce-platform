@@ -3,7 +3,6 @@ package se.lexicon.E_commerce_platform.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
