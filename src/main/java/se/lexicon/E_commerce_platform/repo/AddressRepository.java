@@ -8,10 +8,10 @@ import java.util.List;
 public interface AddressRepository extends JpaRepository<Address, Long> {
 
     // Find all addresses in a specific zip code
-    List<Address> findByZipCode(String zipCode);
+    List<Address> findAllByZipCode(String zipCode);
 
     // Find all addresses in a specific city
-    List<Address> findByCity(String city);
+    List<Address> findAllByCity(String city);
 
     // Find addresses by street name
     List<Address> findByStreetContainingIgnoreCase(String street);

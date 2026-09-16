@@ -3,6 +3,8 @@ package se.lexicon.E_commerce_platform.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Entity
+@Table(name = "addresses")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -10,7 +12,6 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 
-@Table(name = "addresses")
 public class Address {
 
     @Id
