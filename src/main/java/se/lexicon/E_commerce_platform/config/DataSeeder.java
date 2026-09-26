@@ -4,8 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import se.lexicon.E_commerce_platform.entity.Category;
 import se.lexicon.E_commerce_platform.entity.Product;
-import se.lexicon.E_commerce_platform.repo.CategoryRepository;
-import se.lexicon.E_commerce_platform.repo.ProductRepository;
+import se.lexicon.E_commerce_platform.repository.CategoryRepository;
+import se.lexicon.E_commerce_platform.repository.ProductRepository;
 
 import java.math.BigDecimal;
 import java.util.List;

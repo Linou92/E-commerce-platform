@@ -1,4 +1,4 @@
-package se.lexicon.E_commerce_platform.repo;
+package se.lexicon.E_commerce_platform.repository;
 
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;

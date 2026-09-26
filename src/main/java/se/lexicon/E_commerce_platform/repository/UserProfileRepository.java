@@ -1,9 +1,8 @@
-package se.lexicon.E_commerce_platform.repo;
+package se.lexicon.E_commerce_platform.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import se.lexicon.E_commerce_platform.entity.UserProfile;
 
-import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
