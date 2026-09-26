@@ -23,4 +23,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     long countByCategoryName(String name);
 
     List<Product> findByCategoryId(Long categoryId);
+
+    boolean existsByName(String name);
 }
