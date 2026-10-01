@@ -5,6 +5,7 @@ import se.lexicon.E_commerce_platform.dto.CustomerRequest;
 import se.lexicon.E_commerce_platform.dto.CustomerResponse;
 import se.lexicon.E_commerce_platform.entity.Customer;
 import se.lexicon.E_commerce_platform.exception.DuplicateResourceException;
+import se.lexicon.E_commerce_platform.exception.EmailAlreadyExistsException;
 import se.lexicon.E_commerce_platform.exception.ResourceNotFoundException;
 import se.lexicon.E_commerce_platform.mapper.CustomerMapper;
 import se.lexicon.E_commerce_platform.repository.CustomerRepository;
@@ -25,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
 
         // check if email already exists
         if(customerRepository.findByEmail(request.email()).isPresent()){
-            throw new DuplicateResourceException("Email already exists " + request.email());
+            throw new EmailAlreadyExistsException("Email already exists " + request.email());
         }
 
         // convert dto to entity
