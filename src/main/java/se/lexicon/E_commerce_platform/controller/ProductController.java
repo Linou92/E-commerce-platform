@@ -30,12 +30,12 @@ public class ProductController {
     @GetMapping
     public ResponseEntity<List<ProductResponse>> findAll() {
         List<ProductResponse> products = productService.findAll();
-        return ResponseEntity.ok(products);
+        return ResponseEntity.status(HttpStatus.OK).body(products);
     }
 
     @GetMapping("/search")
     public ResponseEntity<List<ProductResponse>> searchByName (@RequestParam String name) {
         List<ProductResponse> products = productService.searchByName(name);
-        return ResponseEntity.ok(products);
+        return ResponseEntity.status(HttpStatus.OK).body(products);
     }
 }

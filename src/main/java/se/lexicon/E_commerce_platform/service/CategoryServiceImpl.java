@@ -1,5 +1,6 @@
 package se.lexicon.E_commerce_platform.service;
 
+import org.springframework.stereotype.Service;
 import se.lexicon.E_commerce_platform.dto.CategoryResponse;
 import se.lexicon.E_commerce_platform.entity.Category;
 import se.lexicon.E_commerce_platform.exception.DuplicateResourceException;
@@ -8,6 +9,7 @@ import se.lexicon.E_commerce_platform.repository.CategoryRepository;
 
 import java.util.List;
 
+@Service
 public class CategoryServiceImpl implements CategoryService{
 
     private final CategoryRepository categoryRepository;
