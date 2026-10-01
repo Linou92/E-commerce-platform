@@ -1,5 +1,6 @@
 package se.lexicon.E_commerce_platform.service;
 
+import org.springframework.stereotype.Service;
 import se.lexicon.E_commerce_platform.dto.ProductRequest;
 import se.lexicon.E_commerce_platform.dto.ProductResponse;
 import se.lexicon.E_commerce_platform.entity.Category;
@@ -11,6 +12,7 @@ import se.lexicon.E_commerce_platform.repository.ProductRepository;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
